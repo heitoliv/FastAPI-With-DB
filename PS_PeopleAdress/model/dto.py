@@ -43,6 +43,18 @@ class EnderecoBase(SQLModel):
     bairro: str
     uf: str
 
+class EnderecoUpdate(SQLModel):
+    """
+    Schema usado para atualizar um Endereco existente via API.
+    Todos os campos são opcionais para permitir atualizações parciais.
+    """
+    logradouro: Optional[str] = None
+    numero: Optional[str] = None
+    cidade: Optional[str] = None
+    bairro: Optional[str] = None
+    uf: Optional[str] = None
+    
+
 class EnderecoCreate(EnderecoBase):
     """
     Schema usado para criar um novo Endereco via API.
